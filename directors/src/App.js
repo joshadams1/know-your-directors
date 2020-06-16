@@ -2,11 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import DataFetching from './DataFetching';
+import directors from './directors';
 
 function App() {
   return (
     <div className="App">
-      <DataFetching id={21684} />
+      {/* {images.map(image => <CharacterIcon key={image.id} name={image.name} description={image.alt} characterId={image.characterId} />)} */}
+      {directors.map(director => <DataFetching id={director.directorId} />)}
       <img src="https://image.tmdb.org/t/p/w375_and_h375_face/tKLJBqbdH6HFj2QxLA5o8Zk7IVs.jpg"></img>
     </div>
     /* 
