@@ -8,8 +8,7 @@ function App() {
   return (
     <div className="App">
       {/* {images.map(image => <CharacterIcon key={image.id} name={image.name} description={image.alt} characterId={image.characterId} />)} */}
-      {directors.map(director => <DataFetching id={director.directorId} />)}
-      <img src="https://image.tmdb.org/t/p/w375_and_h375_face/tKLJBqbdH6HFj2QxLA5o8Zk7IVs.jpg"></img>
+      {directors.map(director => <DataFetching id={director.directorId} image={director.img} />)}
     </div>
     /* 
     Director IDs for requests
