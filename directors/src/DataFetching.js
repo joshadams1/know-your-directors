@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import DirectorData from './DirectorData';
-import directors from './directors';
+import DirectorNavigator from './DirectorNavigator';
+
 
 const DataFetching = (props) => {
     const [hasError, setErrors] = useState(false);
@@ -33,7 +33,7 @@ const DataFetching = (props) => {
         <div>
             <h1 onMouseEnter={showName} onMouseLeave={hideName}>Name: {name}</h1>
             <img src={props.image}></img>
-            <DirectorData name={data.name} bio={data.biography} />
+            <DirectorNavigator />
         </div>
     );
 };

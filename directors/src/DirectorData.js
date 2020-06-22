@@ -7,9 +7,6 @@ const DirectorData = (props) => {
         <div>
             <h1>Name: {props.name}</h1>
             <p>{props.bio}</p>
-            <Button variant="contained" color="primary">
-                Hello World
-            </Button>
         </div>
     )
 };
