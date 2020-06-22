@@ -29,8 +29,6 @@ const DataFetching = (props) => {
         setName("")
     }
 
-    console.log(data)
-
     return (
         <div>
             <h1 onMouseEnter={showName} onMouseLeave={hideName}>Name: {name}</h1>
