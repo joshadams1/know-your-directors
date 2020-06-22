@@ -29,12 +29,12 @@ const DataFetching = (props) => {
         setName("")
     }
 
-
     return (
         <div>
             <h1 onMouseEnter={showName} onMouseLeave={hideName}>Name: {name}</h1>
+            <img src={props.img}></img>
             {/* <DirectorData bio={data.biography} name={data.name} /> */}
-        </div>
+        </div >
     );
 };
 
