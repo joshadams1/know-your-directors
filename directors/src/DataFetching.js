@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import DirectorNavigator from './DirectorNavigator';
-
+import Button from '@material-ui/core/Button';
+import DirectorData from './DirectorData';
 
 const DataFetching = (props) => {
     const [hasError, setErrors] = useState(false);
     const [data, setData] = useState({});
-    const [name, setName] = useState("");
+    const [bio, setBio] = useState("");
+    const [photo, setPhoto] = useState("");
 
 
     async function fetchData() {
@@ -18,22 +19,24 @@ const DataFetching = (props) => {
     }
 
     useEffect(() => {
-        fetchData();
+        fetchData()
     }, []);
 
-    function showName() {
-        setName(data.name)
+    function showDirectorData() {
+        setBio(data.biography)
+        setPhoto(props.img)
+        console.log("photo", photo)
     }
 
-    function hideName() {
-        setName("")
+    function hideDirectorData() {
+        setBio("")
+        setPhoto("")
     }
 
     return (
         <div>
-            <h1 onMouseEnter={showName} onMouseLeave={hideName}>Name: {name}</h1>
-            <img src={props.image}></img>
-            <DirectorNavigator />
+            <Button onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} /</Button>
+            <DirectorData bio={bio} image={photo} />
         </div>
     );
 };

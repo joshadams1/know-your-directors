@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import DataFetching from './DataFetching';
 import directors from './directors';
+import DirectorNavigator from './DirectorNavigator';
 
 function App() {
   return (
     <div className="App">
-      {directors.map(director => <DataFetching id={director.directorId} img={director.img} />)}
+      <DirectorNavigator />
     </div>
   );
 }

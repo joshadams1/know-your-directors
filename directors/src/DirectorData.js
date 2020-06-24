@@ -1,11 +1,9 @@
 import React from 'react';
-import { checkPropTypes } from 'prop-types';
-import Button from '@material-ui/core/Button';
 
 const DirectorData = (props) => {
     return (
         <div>
-            <h1>Name: {props.name}</h1>
+            <img src={props.image}></img>
             <p>{props.bio}</p>
         </div>
     )
