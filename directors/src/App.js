@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import DataFetching from './DataFetching';
-import directors from './directors';
+import './App.scss';
 import DirectorNavigator from './DirectorNavigator';
+import Button from '@material-ui/core/Button';
 
 function App() {
   return (
