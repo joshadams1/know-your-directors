@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Button from '@material-ui/core/Button';
 import DirectorData from './DirectorData';
 
 const DataFetching = (props) => {
@@ -14,7 +13,6 @@ const DataFetching = (props) => {
         res
             .json()
             .then(res => setData(res))
-            // .then(setData(JSON.stringify(res)))
             .catch(err => setErrors(err), console.log(hasError))
     }
 
@@ -35,8 +33,10 @@ const DataFetching = (props) => {
 
     return (
         <div>
-            <Button onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} /</Button>
-            <DirectorData bio={bio} image={photo} />
+            <div className="display">
+                <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} /</h1>
+            </div>
+            <DirectorData bio={bio} image={photo} alt={props.alt} />
         </div>
     );
 };
