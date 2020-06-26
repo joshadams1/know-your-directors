@@ -33,10 +33,10 @@ const DataFetching = (props) => {
 
     return (
         <div>
-            <div className="display">
-                <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} /</h1>
+            <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} <span className="padding">/</span></h1>
+            <div>
+                <DirectorData bio={bio} image={photo} alt={props.alt} />
             </div>
-            <DirectorData bio={bio} image={photo} alt={props.alt} />
         </div>
     );
 };

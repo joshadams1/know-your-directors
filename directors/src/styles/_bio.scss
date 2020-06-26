@@ -1,5 +1,9 @@
-.display h1 {
-    display: inline; 
-    text-align: center;
-    font-size: 20px;
+.display {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.padding {
+    margin-left: 40px;
 }

@@ -4,7 +4,7 @@ import DataFetching from './DataFetching';
 
 const DirectorNavigator = () => {
     return (
-        <div>
+        <div className="display">
             {directors.map(director =>
                 <DataFetching key={director.id} id={director.directorId} img={director.img} alt={director.alt} />
             )}
