@@ -5,7 +5,6 @@ const DataFetching = (props) => {
     const [hasError, setErrors] = useState(false);
     const [data, setData] = useState({});
     const [bio, setBio] = useState("");
-    const [photo, setPhoto] = useState("");
 
 
     async function fetchData() {
@@ -22,20 +21,21 @@ const DataFetching = (props) => {
 
     function showDirectorData() {
         setBio(data.biography)
-        setPhoto(props.img)
-        console.log("photo", photo)
+        props.setPhoto(props.img)
+        props.setAlt(props.alt)
     }
 
     function hideDirectorData() {
         setBio("")
-        setPhoto("")
+        props.setAlt("")
+        props.setPhoto("")
     }
 
     return (
         <div>
             <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} <span className="padding">/</span></h1>
             <div>
-                <DirectorData bio={bio} image={photo} alt={props.alt} />
+                <DirectorData bio={bio} alt={props.alt} />
             </div>
         </div>
     );

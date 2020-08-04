@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const DirectorImage = (props) => {
+    console.log(props.alternateText)
     return (
         <div>
-            <img>{props.image}</img>
+            <img src={props.url} alt={props.alternateText}></img>
         </div>
     )
 }
+
+export default DirectorImage;
