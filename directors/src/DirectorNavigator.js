@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import directors from './directors';
 import DataFetching from './DataFetching';
 import DirectorImage from './DirectorImage';
+import DirectorBio from './DirectorBio';
 
 const DirectorNavigator = () => {
     const [photo, setPhoto] = useState("");
@@ -17,12 +18,13 @@ const DirectorNavigator = () => {
                     img={director.img}
                     alt={director.alt}
                     setPhoto={setPhoto}
+                    setBio={setBio}
                     setAlt={setAlt}
                     name={director.name}
                 />
             )}
             <DirectorImage url={photo} alternateText={alt} />
-            <DirectorBio />
+            <DirectorBio bio={bio} />
         </div>
     )
 }

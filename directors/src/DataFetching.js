@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import DirectorData from './DirectorData';
 
 const DataFetching = (props) => {
     const [hasError, setErrors] = useState(false);
     const [data, setData] = useState({});
-    const [bio, setBio] = useState("");
 
 
     async function fetchData() {
@@ -20,13 +18,13 @@ const DataFetching = (props) => {
     }, []);
 
     function showDirectorData() {
-        setBio(data.biography)
+        props.setBio(data.biography)
         props.setPhoto(props.img)
         props.setAlt(props.alt)
     }
 
     function hideDirectorData() {
-        setBio("")
+        props.setBio("")
         props.setAlt("")
         props.setPhoto("")
     }
@@ -34,9 +32,6 @@ const DataFetching = (props) => {
     return (
         <div>
             <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} <span className="padding">/</span></h1>
-            <div>
-                <DirectorData bio={bio} alt={props.alt} />
-            </div>
         </div>
     );
 };
