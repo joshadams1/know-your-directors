@@ -5,7 +5,8 @@ import DirectorImage from './DirectorImage';
 
 const DirectorNavigator = () => {
     const [photo, setPhoto] = useState("");
-    const [alt, setAlt] = useState("")
+    const [bio, setBio] = useState("");
+    const [alt, setAlt] = useState("");
 
     return (
         <div className="display">
@@ -21,6 +22,7 @@ const DirectorNavigator = () => {
                 />
             )}
             <DirectorImage url={photo} alternateText={alt} />
+            <DirectorBio />
         </div>
     )
 }
