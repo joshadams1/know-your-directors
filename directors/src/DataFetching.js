@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Tab from '@material-ui/core/Tab';
 
 const DataFetching = (props) => {
     const [hasError, setErrors] = useState(false);
@@ -31,7 +32,13 @@ const DataFetching = (props) => {
 
     return (
         <div>
-            <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} <span className="padding">/</span></h1>
+            {/* <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} <span className="padding">/</span></h1> */}
+            <Tab
+                indicatorColor="primary"
+                label={data.name}
+                onMouseEnter={showDirectorData}
+                onMouseLeave={hideDirectorData}
+            >Test</Tab>
         </div>
     );
 };
