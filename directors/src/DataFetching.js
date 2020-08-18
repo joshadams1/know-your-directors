@@ -7,7 +7,7 @@ const DataFetching = (props) => {
 
 
     async function fetchData() {
-        const res = await fetch(`https://api.themoviedb.org/3/person/${props.id}?api_key=c4da3b1a9df6fc0121e72f785daa41a8&language=en-US`);
+        const res = await fetch(`https://api.themoviedb.org/3/person/${props.directorId}?api_key=c4da3b1a9df6fc0121e72f785daa41a8&language=en-US`);
         res
             .json()
             .then(res => setData(res))
@@ -22,17 +22,18 @@ const DataFetching = (props) => {
         props.setBio(data.biography)
         props.setPhoto(props.img)
         props.setAlt(props.alt)
+        props.setValue(props.id)
     }
 
     function hideDirectorData() {
         props.setBio("")
         props.setAlt("")
         props.setPhoto("")
+        props.setValue(0)
     }
 
     return (
         <div>
-            {/* <h1 onMouseEnter={showDirectorData} onMouseLeave={hideDirectorData}> {data.name} <span className="padding">/</span></h1> */}
             <Tab
                 indicatorColor="primary"
                 label={data.name}

@@ -9,23 +9,31 @@ const DirectorNavigator = () => {
     const [photo, setPhoto] = useState("");
     const [bio, setBio] = useState("");
     const [alt, setAlt] = useState("");
-    const [value, newValue] = useState(0);
+    const [value, setValue] = useState(3);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     return (
         <div className="display2">
             <Tabs
-                value={}
+                value={value}
                 centered
+                onChange={handleChange}
+                indicatorColor="primary"
             >
                 {directors.map(director =>
                     <DataFetching
                         key={director.id}
-                        id={director.directorId}
+                        id={director.id}
+                        directorId={director.directorId}
                         img={director.img}
                         alt={director.alt}
                         setPhoto={setPhoto}
                         setBio={setBio}
                         setAlt={setAlt}
+                        setValue={setValue}
                         name={director.name}
                     />
                 )}

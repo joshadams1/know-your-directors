@@ -2,7 +2,7 @@ import React from 'react';
 
 const DirectorBio = (props) => {
     return (
-        <div class="bio">
+        <div className="bio">
             <p>{props.bio}</p>
         </div>
     )
