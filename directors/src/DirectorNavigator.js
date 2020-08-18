@@ -9,18 +9,13 @@ const DirectorNavigator = () => {
     const [photo, setPhoto] = useState("");
     const [bio, setBio] = useState("");
     const [alt, setAlt] = useState("");
-    const [value, setValue] = useState(3);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+    const [value, setValue] = useState(-1);
 
     return (
         <div className="display2">
             <Tabs
                 value={value}
                 centered
-                onChange={handleChange}
                 indicatorColor="primary"
             >
                 {directors.map(director =>

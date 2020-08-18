@@ -25,21 +25,14 @@ const DataFetching = (props) => {
         props.setValue(props.id)
     }
 
-    function hideDirectorData() {
-        props.setBio("")
-        props.setAlt("")
-        props.setPhoto("")
-        props.setValue(0)
-    }
-
     return (
         <div>
             <Tab
                 indicatorColor="primary"
                 label={data.name}
                 onMouseEnter={showDirectorData}
-                onMouseLeave={hideDirectorData}
-            >Test</Tab>
+            >
+                Test</Tab>
         </div>
     );
 };
