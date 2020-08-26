@@ -8,9 +8,9 @@ import CrossfadeImage from 'react-crossfade-image';
 
 const DirectorNavigator = () => {
     const [photo, setPhoto] = useState("");
-    const [bio, setBio] = useState("");
+    const [bio, setBio] = useState(directors[0].initialBio);
     const [alt, setAlt] = useState("");
-    const [value, setValue] = useState(-1);
+    const [value, setValue] = useState(0);
 
     return (
         <div className="display2">
@@ -35,7 +35,7 @@ const DirectorNavigator = () => {
                 )}
             </Tabs>
             <div className="director-image">
-                <CrossfadeImage src={photo} duration={500} />
+                <CrossfadeImage src={photo} duration={500} bottomSrc={photo} />
             </div>
             {/* <DirectorImage url={photo} alternateText={alt} /> */}
             <DirectorBio bio={bio} />
