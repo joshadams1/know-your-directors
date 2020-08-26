@@ -4,6 +4,7 @@ import DataFetching from './DataFetching';
 import DirectorImage from './DirectorImage';
 import DirectorBio from './DirectorBio';
 import Tabs from '@material-ui/core/Tabs';
+import CrossfadeImage from 'react-crossfade-image';
 
 const DirectorNavigator = () => {
     const [photo, setPhoto] = useState("");
@@ -33,7 +34,10 @@ const DirectorNavigator = () => {
                     />
                 )}
             </Tabs>
-            <DirectorImage url={photo} alternateText={alt} />
+            <div className="director-image">
+                <CrossfadeImage src={photo} duration={500} />
+            </div>
+            {/* <DirectorImage url={photo} alternateText={alt} /> */}
             <DirectorBio bio={bio} />
         </div>
     )
