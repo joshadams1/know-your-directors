@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DirectorBio = (props) => {
+const DirectorBio = props => {
     return (
         <div className="bio">
             <p>{props.bio}</p>

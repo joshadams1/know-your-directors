@@ -18,7 +18,7 @@ const DataFetching = (props) => {
         fetchData()
     }, []);
 
-    function showDirectorData() {
+    const showDirectorData = () => {
         props.setBio(data.biography)
         props.setPhoto(props.img)
         props.setAlt(props.alt)

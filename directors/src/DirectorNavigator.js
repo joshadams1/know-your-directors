@@ -37,7 +37,6 @@ const DirectorNavigator = () => {
             <div className="director-image">
                 <CrossfadeImage src={photo} duration={500} bottomSrc={photo} />
             </div>
-            {/* <DirectorImage url={photo} alternateText={alt} /> */}
             <DirectorBio bio={bio} />
         </div>
     )
